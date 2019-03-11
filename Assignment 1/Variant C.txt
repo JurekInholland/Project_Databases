@@ -1,0 +1,2 @@
+All team members have cloned the repository (https://github.com/JurekInholland/Project_Databases)
+and successfully connected to the DB.
