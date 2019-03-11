@@ -1,2 +1,41 @@
 All team members have cloned the repository (https://github.com/JurekInholland/Project_Databases)
 and successfully connected to the DB.
+
+These are the SQL queries used to setup the db:
+
+CREATE TABLE Room
+(
+    [room_id] INT NOT NULL PRIMARY KEY, 
+    [room_kind] INT NOT NULL, 
+)
+
+CREATE TABLE Student (
+    [student_id] INT NOT NULL PRIMARY KEY,
+    [year]       INT NOT NULL,
+    [grouptype]  INT NOT NULL,
+    [name] NVARCHAR(128) NOT NULL, 
+    [room_id] INT NOT NULL, 
+    CONSTRAINT [FK_Student] FOREIGN KEY ([room_id]) REFERENCES [Room]([room_id]),
+)
+
+CREATE TABLE Activity
+(
+    [activity_id] INT NOT NULL PRIMARY KEY, 
+    [date] DATETIME NOT NULL, 
+    [name] NVARCHAR(255) NOT NULL
+)
+
+CREATE TABLE Teacher
+(
+    [teacher_id] INT NOT NULL PRIMARY KEY, 
+    [specialty] INT NOT NULL, 
+    [room_id] INT NOT NULL, 
+    CONSTRAINT [FK_Teacher] FOREIGN KEY ([room_id]) REFERENCES [Room]([room_id])
+)
+
+CREATE TABLE Drink
+(
+    [drink_id] INT NOT NULL, 
+    [drink_name] NVARCHAR(128) NOT NULL , 
+    [price] INT NOT NULL, 
+)
