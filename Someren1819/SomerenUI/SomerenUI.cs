@@ -79,14 +79,16 @@ namespace SomerenUI
 
             else if (panelName == "Lecturers")
             {
+                // Hide other panels
                 pnl_Dashboard.Hide();
                 img_Dashboard.Hide();
                 pnl_Students.Hide();
 
+                // Show lecturers panel; clear listView
                 pnl_Lecturers.Show();
                 listViewLecturers.Clear();
 
-                //add columns 
+                // Add columns 
                 listViewLecturers.Columns.Add("Lecturer ID");
                 listViewLecturers.Columns[0].Width = 100;
                 listViewLecturers.Columns.Add("First Name");
@@ -96,16 +98,19 @@ namespace SomerenUI
                 listViewLecturers.Columns.Add("Is Supervisor");
                 listViewLecturers.Columns[3].Width = 100;
 
-                // fill the lecturers listview within the lecturers panel with a list of lecturers
+                // Fill the lecturers listview within the lecturers panel with a list of lecturers
                 SomerenLogic.Lecturer_Service lecService = new SomerenLogic.Lecturer_Service();
                 List<Teacher> lecturerList = lecService.GetTeachers();
 
+                // Iterate over teachers
                 foreach (SomerenModel.Teacher t in lecturerList)
                 {
 
                     ListViewItem li = new ListViewItem(t.Number.ToString());
                     li.SubItems.Add(t.FirstName);
                     li.SubItems.Add(t.LastName);
+
+                    // Parse supervisor status which is either 0 or 1.
                     if (t.Supervisor == 1)
                     {
                         li.SubItems.Add("Yes");
@@ -113,26 +118,19 @@ namespace SomerenUI
                     {
                         li.SubItems.Add("No");
                     }
-                    //li.SubItems.Add(t.Supervisor);
                     listViewLecturers.Items.Add(li);
                 }
             }
-
          }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
+            showPanel("Dashboard");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void dashboardToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            showPanel("Dashboard");
         }
 
         private void img_Dashboard_Click(object sender, EventArgs e)
