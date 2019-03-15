@@ -108,10 +108,10 @@ namespace SomerenUI
                     li.SubItems.Add(t.LastName);
                     if (t.Supervisor == 1)
                     {
-                        li.SubItems.Add("YES");
+                        li.SubItems.Add("Yes");
                     } else
                     {
-                        li.SubItems.Add("NO");
+                        li.SubItems.Add("No");
                     }
                     //li.SubItems.Add(t.Supervisor);
                     listViewLecturers.Items.Add(li);
