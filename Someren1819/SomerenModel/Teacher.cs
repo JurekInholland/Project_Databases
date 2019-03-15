@@ -8,8 +8,11 @@ namespace SomerenModel
 {
     public class Teacher
     {
-        public String Name { get; set; }
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
         public int Number { get; set; } // LecturerNumber, e.g. 47198
-        public String Speciality { get; set; }
+        public int Supervisor { get; set; }
+
+        //public String Speciality { get; set; }
     }
 }

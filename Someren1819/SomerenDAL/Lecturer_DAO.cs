@@ -15,7 +15,7 @@ namespace SomerenDAL
 
         public List<Teacher> Db_Get_All_Lecturers()
         {
-            string query = "SELECT teacher_id, name, speciality FROM [Teacher]";
+            string query = "SELECT teacher_id, first_name, last_name, supervisor FROM [Teacher]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             DataTable dttest = ExecuteSelectQuery(query, sqlParameters);
             List<Teacher> tlist = ReadTables(dttest);
@@ -30,8 +30,9 @@ namespace SomerenDAL
                 Teacher teacher = new Teacher()
                 {
                     Number = (int)dr["teacher_id"],
-                    Name = (String)(dr["name"]),
-                    Speciality = (String)(dr["speciality"]),
+                    FirstName = (String)(dr["first_name"]),
+                    LastName = (String)(dr["last_name"]),
+                    Supervisor = (int)(dr["supervisor"]),
                 };
                 teachers.Add(teacher);
             }

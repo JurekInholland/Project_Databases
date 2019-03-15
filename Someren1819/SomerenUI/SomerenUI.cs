@@ -89,10 +89,12 @@ namespace SomerenUI
                 //add columns 
                 listViewLecturers.Columns.Add("Lecturer ID");
                 listViewLecturers.Columns[0].Width = 100;
-                listViewLecturers.Columns.Add("Name");
+                listViewLecturers.Columns.Add("First Name");
                 listViewLecturers.Columns[1].Width = 100;
-                listViewLecturers.Columns.Add("Speciality");
+                listViewLecturers.Columns.Add("Last Name");
                 listViewLecturers.Columns[2].Width = 100;
+                listViewLecturers.Columns.Add("Is Supervisor");
+                listViewLecturers.Columns[3].Width = 100;
 
                 // fill the lecturers listview within the lecturers panel with a list of lecturers
                 SomerenLogic.Lecturer_Service lecService = new SomerenLogic.Lecturer_Service();
@@ -102,8 +104,16 @@ namespace SomerenUI
                 {
 
                     ListViewItem li = new ListViewItem(t.Number.ToString());
-                    li.SubItems.Add(t.Name);
-                    li.SubItems.Add(t.Speciality);
+                    li.SubItems.Add(t.FirstName);
+                    li.SubItems.Add(t.LastName);
+                    if (t.Supervisor == 1)
+                    {
+                        li.SubItems.Add("YES");
+                    } else
+                    {
+                        li.SubItems.Add("NO");
+                    }
+                    //li.SubItems.Add(t.Supervisor);
                     listViewLecturers.Items.Add(li);
                 }
             }
