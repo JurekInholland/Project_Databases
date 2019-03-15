@@ -28,7 +28,7 @@ namespace SomerenUI
         private void showPanel(string panelName)
         {
 
-            if(panelName == "Dashboard")
+            if (panelName == "Dashboard")
             {
 
                 // hide all other panels
@@ -38,7 +38,7 @@ namespace SomerenUI
                 pnl_Dashboard.Show();
                 img_Dashboard.Show();
             }
-            else if(panelName == "Students")
+            else if (panelName == "Students")
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
@@ -47,7 +47,7 @@ namespace SomerenUI
                 // show students
                 pnl_Students.Show();
 
-                
+
 
                 // fill the students listview within the students panel with a list of students
                 SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
@@ -56,10 +56,20 @@ namespace SomerenUI
                 // clear the listview before filling it again
                 listViewStudents.Clear();
 
+                //add columns 
+                listViewStudents.Columns.Add("Student number");
+                listViewStudents.Columns[0].Width = 100;
+                listViewStudents.Columns.Add("First name");
+                listViewStudents.Columns[1].Width = 100;
+                listViewStudents.Columns.Add("Last name");
+                listViewStudents.Columns[2].Width = 100;
+
                 foreach (SomerenModel.Student s in studentList)
                 {
 
-                    ListViewItem li = new ListViewItem(s.Name);
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    li.SubItems.Add(s.FirstName);
+                    li.SubItems.Add(s.LastName);
                     listViewStudents.Items.Add(li);
                 }
             }
@@ -67,7 +77,7 @@ namespace SomerenUI
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           //
+            //
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +103,7 @@ namespace SomerenUI
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Students");
+
         }
     }
 }
