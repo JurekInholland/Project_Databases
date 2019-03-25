@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SomerenUI));
             this.img_Dashboard = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -39,6 +40,9 @@
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksSuppliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
@@ -55,6 +59,23 @@
             this.lecturerSpeciality = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_Lecturers = new System.Windows.Forms.Label();
+            this.pnl_Drinks = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.listViewDrinks = new System.Windows.Forms.ListView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lbl_Drinks = new System.Windows.Forms.Label();
+            this.pnl_UpdateDrinks = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dataGridViewUpdate = new System.Windows.Forms.DataGridView();
+            this.drinkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drinknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drinkBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pdbe37DataSet = new pdbe37DataSet();
+            this.label3 = new System.Windows.Forms.Label();
+            this.drinkTableAdapter = new pdbe37DataSetTableAdapters.DrinkTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -62,6 +83,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Lecturers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnl_Drinks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pnl_UpdateDrinks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drinkBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdbe37DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -81,7 +108,8 @@
             this.studentsToolStripMenuItem,
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
-            this.roomsToolStripMenuItem});
+            this.roomsToolStripMenuItem,
+            this.drinksToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(962, 24);
@@ -101,19 +129,19 @@
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -142,6 +170,28 @@
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.roomsToolStripMenuItem.Text = "Rooms";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.drinksSuppliesToolStripMenuItem,
+            this.revenueReportToolStripMenuItem});
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.drinksToolStripMenuItem.Text = "Drinks";
+            // 
+            // drinksSuppliesToolStripMenuItem
+            // 
+            this.drinksSuppliesToolStripMenuItem.Name = "drinksSuppliesToolStripMenuItem";
+            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.drinksSuppliesToolStripMenuItem.Text = "Drinks Supplies";
+            this.drinksSuppliesToolStripMenuItem.Click += new System.EventHandler(this.drinksSuppliesToolStripMenuItem_Click);
+            // 
+            // revenueReportToolStripMenuItem
+            // 
+            this.revenueReportToolStripMenuItem.Name = "revenueReportToolStripMenuItem";
+            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.revenueReportToolStripMenuItem.Text = "Revenue Report";
             // 
             // pnl_Dashboard
             // 
@@ -262,7 +312,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SomerenUI.Properties.Resources.someren;
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(805, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(130, 123);
@@ -279,11 +329,164 @@
             this.lbl_Lecturers.TabIndex = 3;
             this.lbl_Lecturers.Text = "Lecturers";
             // 
+            // pnl_Drinks
+            // 
+            this.pnl_Drinks.Controls.Add(this.btnEdit);
+            this.pnl_Drinks.Controls.Add(this.listViewDrinks);
+            this.pnl_Drinks.Controls.Add(this.pictureBox3);
+            this.pnl_Drinks.Controls.Add(this.lbl_Drinks);
+            this.pnl_Drinks.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Drinks.Name = "pnl_Drinks";
+            this.pnl_Drinks.Size = new System.Drawing.Size(938, 466);
+            this.pnl_Drinks.TabIndex = 9;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(201, 392);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(134, 29);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // listViewDrinks
+            // 
+            this.listViewDrinks.GridLines = true;
+            this.listViewDrinks.Location = new System.Drawing.Point(22, 58);
+            this.listViewDrinks.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewDrinks.Name = "listViewDrinks";
+            this.listViewDrinks.Size = new System.Drawing.Size(526, 323);
+            this.listViewDrinks.TabIndex = 1;
+            this.listViewDrinks.UseCompatibleStateImageBehavior = false;
+            this.listViewDrinks.View = System.Windows.Forms.View.Details;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox3.Location = new System.Drawing.Point(800, 13);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(130, 121);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lbl_Drinks
+            // 
+            this.lbl_Drinks.AutoSize = true;
+            this.lbl_Drinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.lbl_Drinks.Location = new System.Drawing.Point(22, 28);
+            this.lbl_Drinks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Drinks.Name = "lbl_Drinks";
+            this.lbl_Drinks.Size = new System.Drawing.Size(170, 29);
+            this.lbl_Drinks.TabIndex = 0;
+            this.lbl_Drinks.Text = "Drink Supplies";
+            // 
+            // pnl_UpdateDrinks
+            // 
+            this.pnl_UpdateDrinks.Controls.Add(this.btnUpdate);
+            this.pnl_UpdateDrinks.Controls.Add(this.dataGridViewUpdate);
+            this.pnl_UpdateDrinks.Controls.Add(this.label3);
+            this.pnl_UpdateDrinks.Location = new System.Drawing.Point(0, 0);
+            this.pnl_UpdateDrinks.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_UpdateDrinks.Name = "pnl_UpdateDrinks";
+            this.pnl_UpdateDrinks.Size = new System.Drawing.Size(950, 490);
+            this.pnl_UpdateDrinks.TabIndex = 5;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(235, 328);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(100, 31);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Save";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // dataGridViewUpdate
+            // 
+            this.dataGridViewUpdate.AutoGenerateColumns = false;
+            this.dataGridViewUpdate.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewUpdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewUpdate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUpdate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.drinkidDataGridViewTextBoxColumn,
+            this.drinknameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
+            this.soldDataGridViewTextBoxColumn});
+            this.dataGridViewUpdate.DataSource = this.drinkBindingSource;
+            this.dataGridViewUpdate.Location = new System.Drawing.Point(15, 50);
+            this.dataGridViewUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewUpdate.Name = "dataGridViewUpdate";
+            this.dataGridViewUpdate.RowTemplate.Height = 24;
+            this.dataGridViewUpdate.Size = new System.Drawing.Size(548, 247);
+            this.dataGridViewUpdate.TabIndex = 1;
+            // 
+            // drinkidDataGridViewTextBoxColumn
+            // 
+            this.drinkidDataGridViewTextBoxColumn.DataPropertyName = "drink_id";
+            this.drinkidDataGridViewTextBoxColumn.HeaderText = "drink_id";
+            this.drinkidDataGridViewTextBoxColumn.Name = "drinkidDataGridViewTextBoxColumn";
+            // 
+            // drinknameDataGridViewTextBoxColumn
+            // 
+            this.drinknameDataGridViewTextBoxColumn.DataPropertyName = "drink_name";
+            this.drinknameDataGridViewTextBoxColumn.HeaderText = "drink_name";
+            this.drinknameDataGridViewTextBoxColumn.Name = "drinknameDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            // 
+            // soldDataGridViewTextBoxColumn
+            // 
+            this.soldDataGridViewTextBoxColumn.DataPropertyName = "sold";
+            this.soldDataGridViewTextBoxColumn.HeaderText = "sold";
+            this.soldDataGridViewTextBoxColumn.Name = "soldDataGridViewTextBoxColumn";
+            // 
+            // drinkBindingSource
+            // 
+            this.drinkBindingSource.DataMember = "Drink";
+            this.drinkBindingSource.DataSource = this.pdbe37DataSet;
+            // 
+            // pdbe37DataSet
+            // 
+            this.pdbe37DataSet.DataSetName = "pdbe37DataSet";
+            this.pdbe37DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label3.Location = new System.Drawing.Point(20, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 29);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Edit drinks";
+            // 
+            // drinkTableAdapter
+            // 
+            this.drinkTableAdapter.ClearBeforeFill = true;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_UpdateDrinks);
+            this.Controls.Add(this.pnl_Drinks);
             this.Controls.Add(this.pnl_Lecturers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
@@ -305,6 +508,14 @@
             this.pnl_Lecturers.ResumeLayout(false);
             this.pnl_Lecturers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnl_Drinks.ResumeLayout(false);
+            this.pnl_Drinks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.pnl_UpdateDrinks.ResumeLayout(false);
+            this.pnl_UpdateDrinks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drinkBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdbe37DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,6 +549,26 @@
         private System.Windows.Forms.ColumnHeader lecturerSpeciality;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_Lecturers;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinksSuppliesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem revenueReportToolStripMenuItem;
+        private System.Windows.Forms.Panel pnl_Drinks;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ListView listViewDrinks;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lbl_Drinks;
+        private System.Windows.Forms.Panel pnl_UpdateDrinks;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView dataGridViewUpdate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource drinkBindingSource;
+        private pdbe37DataSet pdbe37DataSet;
+        private pdbe37DataSetTableAdapters.DrinkTableAdapter drinkTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drinkidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drinknameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soldDataGridViewTextBoxColumn;
     }
 }
 

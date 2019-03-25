@@ -47,6 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pdbe37DataSet.cs">
+      <DependentUpon>pdbe37DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pdbe37DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pdbe37DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SomerenUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +76,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="pdbe37DataSet.xsc">
+      <DependentUpon>pdbe37DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pdbe37DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pdbe37DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="pdbe37DataSet.xss">
+      <DependentUpon>pdbe37DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
