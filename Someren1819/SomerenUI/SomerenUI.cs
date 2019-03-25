@@ -288,42 +288,6 @@ namespace SomerenUI
 
             DateTime currentDate = DateTime.Now;
 
-            // Fills the model with purchases within the indicated range.
-            purchaseTableAdapter.FillWithinRange(pdbe37DataSet.Purchase, endDate, startDate);
-
-            int countWithinRange = 0;
-            int turnover = 0;
-            int studentCount = 0;
-
-            if (purchaseTableAdapter.TotalDrinksWithinRange(endDate, startDate) > 0)
-            {
-                countWithinRange = (int)purchaseTableAdapter.TotalDrinksWithinRange(endDate, startDate);
-
-            } else
-            {
-                countWithinRange = 0;
-            }
-
-            if (purchaseTableAdapter.TurnoverWithinRange(endDate, startDate) > 0)
-            {
-                turnover = (int)purchaseTableAdapter.TurnoverWithinRange(endDate, startDate);
-
-            } else
-            {
-                turnover = 0;
-            }
-
-            if (purchaseTableAdapter.StudentCountWithinRange(endDate, startDate) > 0)
-            {
-                studentCount = (int)purchaseTableAdapter.StudentCountWithinRange(endDate, startDate);
-            } else
-            {
-                studentCount = 0;
-            }
-
-            lblCount.Text = countWithinRange.ToString();
-            lblTurnover.Text = turnover.ToString();
-            lblCustomers.Text = studentCount.ToString();
             
             int compareStart = DateTime.Compare(startDate, currentDate);
             int compareEnd = DateTime.Compare(endDate, currentDate);
@@ -331,6 +295,47 @@ namespace SomerenUI
             if (compareStart == -1 && compareEnd == -1)
             {
                 lbl_RevTimeframe.Text = startDate.ToShortDateString() + " - " + endDate.ToShortDateString();
+
+
+                // Fills the model with purchases within the indicated range.
+                purchaseTableAdapter.FillWithinRange(pdbe37DataSet.Purchase, endDate, startDate);
+
+                int countWithinRange = 0;
+                int turnover = 0;
+                int studentCount = 0;
+
+                if (purchaseTableAdapter.TotalDrinksWithinRange(endDate, startDate) > 0)
+                {
+                    countWithinRange = (int)purchaseTableAdapter.TotalDrinksWithinRange(endDate, startDate);
+
+                }
+                else
+                {
+                    countWithinRange = 0;
+                }
+
+                if (purchaseTableAdapter.TurnoverWithinRange(endDate, startDate) > 0)
+                {
+                    turnover = (int)purchaseTableAdapter.TurnoverWithinRange(endDate, startDate);
+
+                }
+                else
+                {
+                    turnover = 0;
+                }
+
+                if (purchaseTableAdapter.StudentCountWithinRange(endDate, startDate) > 0)
+                {
+                    studentCount = (int)purchaseTableAdapter.StudentCountWithinRange(endDate, startDate);
+                }
+                else
+                {
+                    studentCount = 0;
+                }
+
+                lblCount.Text = countWithinRange.ToString();
+                lblTurnover.Text = turnover.ToString();
+                lblCustomers.Text = studentCount.ToString();
             }
             else
             {
