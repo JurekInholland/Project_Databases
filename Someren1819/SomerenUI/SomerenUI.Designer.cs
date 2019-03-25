@@ -73,9 +73,15 @@
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drinkBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pdbe37DataSet = new pdbe37DataSet();
+            this.pdbe37DataSet = new SomerenUI.pdbe37DataSet();
             this.label3 = new System.Windows.Forms.Label();
-            this.drinkTableAdapter = new pdbe37DataSetTableAdapters.DrinkTableAdapter();
+            this.drinkTableAdapter = new SomerenUI.pdbe37DataSetTableAdapters.DrinkTableAdapter();
+            this.pnl_Report = new System.Windows.Forms.Panel();
+            this.btn_RevSelect = new System.Windows.Forms.Button();
+            this.dgv_Report = new System.Windows.Forms.DataGridView();
+            this.lbl_ReportHeadline = new System.Windows.Forms.Label();
+            this.cal_Report = new System.Windows.Forms.MonthCalendar();
+            this.lbl_RevTimeframe = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -89,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drinkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdbe37DataSet)).BeginInit();
+            this.pnl_Report.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Report)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -480,11 +488,74 @@
             // 
             this.drinkTableAdapter.ClearBeforeFill = true;
             // 
+            // pnl_Report
+            // 
+            this.pnl_Report.Controls.Add(this.lbl_RevTimeframe);
+            this.pnl_Report.Controls.Add(this.cal_Report);
+            this.pnl_Report.Controls.Add(this.btn_RevSelect);
+            this.pnl_Report.Controls.Add(this.dgv_Report);
+            this.pnl_Report.Controls.Add(this.lbl_ReportHeadline);
+            this.pnl_Report.Location = new System.Drawing.Point(6, 7);
+            this.pnl_Report.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Report.Name = "pnl_Report";
+            this.pnl_Report.Size = new System.Drawing.Size(950, 490);
+            this.pnl_Report.TabIndex = 10;
+            // 
+            // btn_RevSelect
+            // 
+            this.btn_RevSelect.Location = new System.Drawing.Point(16, 383);
+            this.btn_RevSelect.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_RevSelect.Name = "btn_RevSelect";
+            this.btn_RevSelect.Size = new System.Drawing.Size(100, 31);
+            this.btn_RevSelect.TabIndex = 8;
+            this.btn_RevSelect.Text = "Select";
+            this.btn_RevSelect.UseVisualStyleBackColor = true;
+            // 
+            // dgv_Report
+            // 
+            this.dgv_Report.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_Report.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Report.Location = new System.Drawing.Point(384, 51);
+            this.dgv_Report.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_Report.Name = "dgv_Report";
+            this.dgv_Report.RowTemplate.Height = 24;
+            this.dgv_Report.Size = new System.Drawing.Size(548, 247);
+            this.dgv_Report.TabIndex = 1;
+            // 
+            // lbl_ReportHeadline
+            // 
+            this.lbl_ReportHeadline.AutoSize = true;
+            this.lbl_ReportHeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.lbl_ReportHeadline.Location = new System.Drawing.Point(20, 15);
+            this.lbl_ReportHeadline.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_ReportHeadline.Name = "lbl_ReportHeadline";
+            this.lbl_ReportHeadline.Size = new System.Drawing.Size(188, 29);
+            this.lbl_ReportHeadline.TabIndex = 0;
+            this.lbl_ReportHeadline.Text = "Revenue Report";
+            // 
+            // cal_Report
+            // 
+            this.cal_Report.CalendarDimensions = new System.Drawing.Size(2, 2);
+            this.cal_Report.Location = new System.Drawing.Point(16, 51);
+            this.cal_Report.Name = "cal_Report";
+            this.cal_Report.TabIndex = 9;
+            // 
+            // lbl_RevTimeframe
+            // 
+            this.lbl_RevTimeframe.AutoSize = true;
+            this.lbl_RevTimeframe.Location = new System.Drawing.Point(138, 392);
+            this.lbl_RevTimeframe.Name = "lbl_RevTimeframe";
+            this.lbl_RevTimeframe.Size = new System.Drawing.Size(100, 13);
+            this.lbl_RevTimeframe.TabIndex = 10;
+            this.lbl_RevTimeframe.Text = "Select a time frame.";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_Report);
             this.Controls.Add(this.pnl_UpdateDrinks);
             this.Controls.Add(this.pnl_Drinks);
             this.Controls.Add(this.pnl_Lecturers);
@@ -516,6 +587,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drinkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdbe37DataSet)).EndInit();
+            this.pnl_Report.ResumeLayout(false);
+            this.pnl_Report.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Report)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,6 +643,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soldDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel pnl_Report;
+        private System.Windows.Forms.Button btn_RevSelect;
+        private System.Windows.Forms.DataGridView dgv_Report;
+        private System.Windows.Forms.Label lbl_ReportHeadline;
+        private System.Windows.Forms.Label lbl_RevTimeframe;
+        private System.Windows.Forms.MonthCalendar cal_Report;
     }
 }
 
