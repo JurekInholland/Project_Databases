@@ -73,15 +73,28 @@
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drinkBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pdbe37DataSet = new SomerenUI.pdbe37DataSet();
+            this.pdbe37DataSet = new pdbe37DataSet();
             this.label3 = new System.Windows.Forms.Label();
-            this.drinkTableAdapter = new SomerenUI.pdbe37DataSetTableAdapters.DrinkTableAdapter();
             this.pnl_Report = new System.Windows.Forms.Panel();
-            this.btn_RevSelect = new System.Windows.Forms.Button();
-            this.dgv_Report = new System.Windows.Forms.DataGridView();
-            this.lbl_ReportHeadline = new System.Windows.Forms.Label();
-            this.cal_Report = new System.Windows.Forms.MonthCalendar();
+            this.lblCustomers = new System.Windows.Forms.Label();
+            this.lblTurnover = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
             this.lbl_RevTimeframe = new System.Windows.Forms.Label();
+            this.cal_Report = new System.Windows.Forms.MonthCalendar();
+            this.dgv_Report = new System.Windows.Forms.DataGridView();
+            this.purchaseidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbl_ReportHeadline = new System.Windows.Forms.Label();
+            this.drinkTableAdapter = new pdbe37DataSetTableAdapters.DrinkTableAdapter();
+            this.purchaseTableAdapter = new pdbe37DataSetTableAdapters.PurchaseTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -97,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pdbe37DataSet)).BeginInit();
             this.pnl_Report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Report)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -191,15 +205,16 @@
             // drinksSuppliesToolStripMenuItem
             // 
             this.drinksSuppliesToolStripMenuItem.Name = "drinksSuppliesToolStripMenuItem";
-            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.drinksSuppliesToolStripMenuItem.Text = "Drinks Supplies";
             this.drinksSuppliesToolStripMenuItem.Click += new System.EventHandler(this.drinksSuppliesToolStripMenuItem_Click);
             // 
             // revenueReportToolStripMenuItem
             // 
             this.revenueReportToolStripMenuItem.Name = "revenueReportToolStripMenuItem";
-            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.revenueReportToolStripMenuItem.Text = "Revenue Report";
+            this.revenueReportToolStripMenuItem.Click += new System.EventHandler(this.revenueReportToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -343,9 +358,9 @@
             this.pnl_Drinks.Controls.Add(this.listViewDrinks);
             this.pnl_Drinks.Controls.Add(this.pictureBox3);
             this.pnl_Drinks.Controls.Add(this.lbl_Drinks);
-            this.pnl_Drinks.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Drinks.Location = new System.Drawing.Point(0, 24);
             this.pnl_Drinks.Name = "pnl_Drinks";
-            this.pnl_Drinks.Size = new System.Drawing.Size(938, 466);
+            this.pnl_Drinks.Size = new System.Drawing.Size(938, 418);
             this.pnl_Drinks.TabIndex = 9;
             // 
             // btnEdit
@@ -396,10 +411,10 @@
             this.pnl_UpdateDrinks.Controls.Add(this.btnUpdate);
             this.pnl_UpdateDrinks.Controls.Add(this.dataGridViewUpdate);
             this.pnl_UpdateDrinks.Controls.Add(this.label3);
-            this.pnl_UpdateDrinks.Location = new System.Drawing.Point(0, 0);
+            this.pnl_UpdateDrinks.Location = new System.Drawing.Point(0, 24);
             this.pnl_UpdateDrinks.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_UpdateDrinks.Name = "pnl_UpdateDrinks";
-            this.pnl_UpdateDrinks.Size = new System.Drawing.Size(950, 490);
+            this.pnl_UpdateDrinks.Size = new System.Drawing.Size(956, 473);
             this.pnl_UpdateDrinks.TabIndex = 5;
             // 
             // btnUpdate
@@ -484,71 +499,184 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Edit drinks";
             // 
-            // drinkTableAdapter
-            // 
-            this.drinkTableAdapter.ClearBeforeFill = true;
-            // 
             // pnl_Report
             // 
+            this.pnl_Report.Controls.Add(this.lblCustomers);
+            this.pnl_Report.Controls.Add(this.lblTurnover);
+            this.pnl_Report.Controls.Add(this.label4);
+            this.pnl_Report.Controls.Add(this.label2);
+            this.pnl_Report.Controls.Add(this.label1);
+            this.pnl_Report.Controls.Add(this.lblCount);
             this.pnl_Report.Controls.Add(this.lbl_RevTimeframe);
             this.pnl_Report.Controls.Add(this.cal_Report);
-            this.pnl_Report.Controls.Add(this.btn_RevSelect);
             this.pnl_Report.Controls.Add(this.dgv_Report);
             this.pnl_Report.Controls.Add(this.lbl_ReportHeadline);
-            this.pnl_Report.Location = new System.Drawing.Point(6, 7);
+            this.pnl_Report.Location = new System.Drawing.Point(0, 24);
             this.pnl_Report.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Report.Name = "pnl_Report";
-            this.pnl_Report.Size = new System.Drawing.Size(950, 490);
+            this.pnl_Report.Size = new System.Drawing.Size(956, 473);
             this.pnl_Report.TabIndex = 10;
             // 
-            // btn_RevSelect
+            // lblCustomers
             // 
-            this.btn_RevSelect.Location = new System.Drawing.Point(16, 383);
-            this.btn_RevSelect.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_RevSelect.Name = "btn_RevSelect";
-            this.btn_RevSelect.Size = new System.Drawing.Size(100, 31);
-            this.btn_RevSelect.TabIndex = 8;
-            this.btn_RevSelect.Text = "Select";
-            this.btn_RevSelect.UseVisualStyleBackColor = true;
+            this.lblCustomers.AutoSize = true;
+            this.lblCustomers.Location = new System.Drawing.Point(499, 212);
+            this.lblCustomers.Name = "lblCustomers";
+            this.lblCustomers.Size = new System.Drawing.Size(13, 13);
+            this.lblCustomers.TabIndex = 17;
+            this.lblCustomers.Text = "0";
+            // 
+            // lblTurnover
+            // 
+            this.lblTurnover.AutoSize = true;
+            this.lblTurnover.Location = new System.Drawing.Point(499, 188);
+            this.lblTurnover.Name = "lblTurnover";
+            this.lblTurnover.Size = new System.Drawing.Size(13, 13);
+            this.lblTurnover.TabIndex = 16;
+            this.lblTurnover.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(384, 212);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Number of customers";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(384, 188);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Turnover:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(384, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Total # of drinks sold:";
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(499, 162);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(13, 13);
+            this.lblCount.TabIndex = 12;
+            this.lblCount.Text = "0";
+            // 
+            // lbl_RevTimeframe
+            // 
+            this.lbl_RevTimeframe.AutoSize = true;
+            this.lbl_RevTimeframe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RevTimeframe.Location = new System.Drawing.Point(383, 446);
+            this.lbl_RevTimeframe.Name = "lbl_RevTimeframe";
+            this.lbl_RevTimeframe.Size = new System.Drawing.Size(150, 20);
+            this.lbl_RevTimeframe.TabIndex = 10;
+            this.lbl_RevTimeframe.Text = "Select a time frame.";
+            // 
+            // cal_Report
+            // 
+            this.cal_Report.CalendarDimensions = new System.Drawing.Size(2, 2);
+            this.cal_Report.Location = new System.Drawing.Point(12, 162);
+            this.cal_Report.MaxSelectionCount = 9999;
+            this.cal_Report.Name = "cal_Report";
+            this.cal_Report.TabIndex = 9;
+            this.cal_Report.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.cal_Report_DateChanged);
             // 
             // dgv_Report
             // 
+            this.dgv_Report.AutoGenerateColumns = false;
             this.dgv_Report.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_Report.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Report.Location = new System.Drawing.Point(384, 51);
+            this.dgv_Report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.purchaseidDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.studentidDataGridViewTextBoxColumn,
+            this.itemDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn});
+            this.dgv_Report.DataSource = this.purchaseBindingSource;
+            this.dgv_Report.Location = new System.Drawing.Point(12, 32);
             this.dgv_Report.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Report.Name = "dgv_Report";
+            this.dgv_Report.ReadOnly = true;
             this.dgv_Report.RowTemplate.Height = 24;
-            this.dgv_Report.Size = new System.Drawing.Size(548, 247);
+            this.dgv_Report.Size = new System.Drawing.Size(652, 119);
             this.dgv_Report.TabIndex = 1;
+            // 
+            // purchaseidDataGridViewTextBoxColumn
+            // 
+            this.purchaseidDataGridViewTextBoxColumn.DataPropertyName = "purchase_id";
+            this.purchaseidDataGridViewTextBoxColumn.HeaderText = "purchase_id";
+            this.purchaseidDataGridViewTextBoxColumn.Name = "purchaseidDataGridViewTextBoxColumn";
+            this.purchaseidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentidDataGridViewTextBoxColumn
+            // 
+            this.studentidDataGridViewTextBoxColumn.DataPropertyName = "student_id";
+            this.studentidDataGridViewTextBoxColumn.HeaderText = "student_id";
+            this.studentidDataGridViewTextBoxColumn.Name = "studentidDataGridViewTextBoxColumn";
+            this.studentidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemDataGridViewTextBoxColumn
+            // 
+            this.itemDataGridViewTextBoxColumn.DataPropertyName = "item";
+            this.itemDataGridViewTextBoxColumn.HeaderText = "item";
+            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // purchaseBindingSource
+            // 
+            this.purchaseBindingSource.DataMember = "Purchase";
+            this.purchaseBindingSource.DataSource = this.pdbe37DataSet;
             // 
             // lbl_ReportHeadline
             // 
             this.lbl_ReportHeadline.AutoSize = true;
             this.lbl_ReportHeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.lbl_ReportHeadline.Location = new System.Drawing.Point(20, 15);
+            this.lbl_ReportHeadline.Location = new System.Drawing.Point(14, 1);
             this.lbl_ReportHeadline.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ReportHeadline.Name = "lbl_ReportHeadline";
             this.lbl_ReportHeadline.Size = new System.Drawing.Size(188, 29);
             this.lbl_ReportHeadline.TabIndex = 0;
             this.lbl_ReportHeadline.Text = "Revenue Report";
             // 
-            // cal_Report
+            // drinkTableAdapter
             // 
-            this.cal_Report.CalendarDimensions = new System.Drawing.Size(2, 2);
-            this.cal_Report.Location = new System.Drawing.Point(16, 51);
-            this.cal_Report.Name = "cal_Report";
-            this.cal_Report.TabIndex = 9;
+            this.drinkTableAdapter.ClearBeforeFill = true;
             // 
-            // lbl_RevTimeframe
+            // purchaseTableAdapter
             // 
-            this.lbl_RevTimeframe.AutoSize = true;
-            this.lbl_RevTimeframe.Location = new System.Drawing.Point(138, 392);
-            this.lbl_RevTimeframe.Name = "lbl_RevTimeframe";
-            this.lbl_RevTimeframe.Size = new System.Drawing.Size(100, 13);
-            this.lbl_RevTimeframe.TabIndex = 10;
-            this.lbl_RevTimeframe.Text = "Select a time frame.";
+            this.purchaseTableAdapter.ClearBeforeFill = true;
             // 
             // SomerenUI
             // 
@@ -556,8 +684,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
             this.Controls.Add(this.pnl_Report);
-            this.Controls.Add(this.pnl_UpdateDrinks);
             this.Controls.Add(this.pnl_Drinks);
+            this.Controls.Add(this.pnl_UpdateDrinks);
             this.Controls.Add(this.pnl_Lecturers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
@@ -590,6 +718,7 @@
             this.pnl_Report.ResumeLayout(false);
             this.pnl_Report.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Report)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -644,11 +773,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soldDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel pnl_Report;
-        private System.Windows.Forms.Button btn_RevSelect;
         private System.Windows.Forms.DataGridView dgv_Report;
         private System.Windows.Forms.Label lbl_ReportHeadline;
         private System.Windows.Forms.Label lbl_RevTimeframe;
         private System.Windows.Forms.MonthCalendar cal_Report;
+        public pdbe37DataSetTableAdapters.PurchaseTableAdapter purchaseTableAdapter;
+        private System.Windows.Forms.BindingSource purchaseBindingSource;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Label lblCustomers;
+        private System.Windows.Forms.Label lblTurnover;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
     }
 }
 

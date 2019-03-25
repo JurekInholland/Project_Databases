@@ -5,13 +5,19 @@
     partial class pdbe37DataSet
     {
     }
+
+    partial class PurchaseTableAdapter
+    {
+    }
+
+    public partial class DrinkTableAdapter
+    {
+    }
 }
 
 namespace SomerenUI.pdbe37DataSetTableAdapters
 {
-
-
-    public partial class DrinkTableAdapter
+    partial class PurchaseTableAdapter
     {
     }
 }

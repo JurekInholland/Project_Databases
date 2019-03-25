@@ -20,6 +20,22 @@ namespace SomerenUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Hide every panel
+        /// </summary>
+        private void HideAllPanels()
+        {
+            pnl_Students.Hide();
+            pnl_Lecturers.Hide();
+
+            pnl_Dashboard.Hide();
+
+            pnl_Drinks.Hide();
+            pnl_UpdateDrinks.Hide();
+
+            pnl_Report.Hide();
+        }
+
         private void SomerenUI_Load(object sender, EventArgs e)
         {
             drinkTableAdapter.Fill(pdbe37DataSet.Drink);
@@ -43,6 +59,8 @@ namespace SomerenUI
                 // show dashboard
                 pnl_Dashboard.Show();
                 img_Dashboard.Show();
+
+                pnl_Report.Hide();
             }
             else if (panelName == "Students")
             {
@@ -190,6 +208,17 @@ namespace SomerenUI
                 pnl_UpdateDrinks.Show();
 
             }
+
+            else if (panelName == "Revenue Report")
+            {
+
+                HideAllPanels();
+
+                SomerenLogic.Report_Service reportService = new SomerenLogic.Report_Service();
+                List<Report> reportsList = reportService.GetReports();
+
+                pnl_Report.Show();
+            }
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -249,6 +278,69 @@ namespace SomerenUI
 
         }
 
+        /// <summary>
+        /// Gets called when the user selects a range of dates with the revenue calendar.
+        /// </summary>
+        private void cal_Report_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime startDate = e.Start;
+            DateTime endDate = e.End;
 
+            DateTime currentDate = DateTime.Now;
+
+            // Fills the model with purchases within the indicated range.
+            purchaseTableAdapter.FillWithinRange(pdbe37DataSet.Purchase, endDate, startDate);
+
+            int countWithinRange = 0;
+            int turnover = 0;
+            int studentCount = 0;
+
+            if (purchaseTableAdapter.TotalDrinksWithinRange(endDate, startDate) > 0)
+            {
+                countWithinRange = (int)purchaseTableAdapter.TotalDrinksWithinRange(endDate, startDate);
+
+            } else
+            {
+                countWithinRange = 0;
+            }
+
+            if (purchaseTableAdapter.TurnoverWithinRange(endDate, startDate) > 0)
+            {
+                turnover = (int)purchaseTableAdapter.TurnoverWithinRange(endDate, startDate);
+
+            } else
+            {
+                turnover = 0;
+            }
+
+            if (purchaseTableAdapter.StudentCountWithinRange(endDate, startDate) > 0)
+            {
+                studentCount = (int)purchaseTableAdapter.StudentCountWithinRange(endDate, startDate);
+            } else
+            {
+                studentCount = 0;
+            }
+
+            lblCount.Text = countWithinRange.ToString();
+            lblTurnover.Text = turnover.ToString();
+            lblCustomers.Text = studentCount.ToString();
+            
+            int compareStart = DateTime.Compare(startDate, currentDate);
+            int compareEnd = DateTime.Compare(endDate, currentDate);
+
+            if (compareStart == -1 && compareEnd == -1)
+            {
+                lbl_RevTimeframe.Text = startDate.ToShortDateString() + " - " + endDate.ToShortDateString();
+            }
+            else
+            {
+                lbl_RevTimeframe.Text = "Please select a past date!";
+            }
+        }
+
+        private void revenueReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Revenue Report");
+        }
     }
 }
