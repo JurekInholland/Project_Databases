@@ -284,6 +284,12 @@ namespace SomerenUI
                     string t1name = TeacherLookup(teacherNames, act.supervisor1);
                     string t2name = TeacherLookup(teacherNames, act.supervisor2);
 
+                    // Check if no supervisor is assigned
+                    if (t1name == "" && t2name == "")
+                    {
+                        t1name = "UNSUPERVISED!";
+                    }
+
                     string day = act.date.DayOfWeek.ToString();
                     int month = act.date.Month;
                     int year = act.date.Year;
@@ -354,7 +360,7 @@ namespace SomerenUI
             {
                 return teacherName;
             }
-            return "not found";
+            return "";
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -628,16 +634,6 @@ namespace SomerenUI
         private void timeTableToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Time Table");
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)

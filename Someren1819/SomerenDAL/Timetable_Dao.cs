@@ -47,13 +47,30 @@ namespace SomerenDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
+                int supervisor1Id = 0;
+                int supervisor2Id = 0;
+
+                Console.WriteLine("ID: " + dr["activity_id"] + " sup:" + dr["supervisor1"].ToString());
+                if (dr["supervisor1"].ToString() != "")
+                {
+                    supervisor1Id = (int)dr["supervisor1"];
+                } 
+
+                if (dr["supervisor2"].ToString() != "")
+                {
+                    supervisor2Id = (int)dr["supervisor2"];
+                }
+                
+
                 Activity activity = new Activity()
                 {
                     activity_id = (int)dr["activity_id"],
                     //date = (DateTime)["date"],
                     date = (DateTime)dr["date"],
-                    supervisor1 = (int)dr["supervisor1"],
-                    supervisor2 = (int)dr["supervisor2"],
+
+                    
+                    supervisor1 = supervisor1Id,
+                    supervisor2 = supervisor2Id,
                     name = (string)dr["name"]
 
                 };

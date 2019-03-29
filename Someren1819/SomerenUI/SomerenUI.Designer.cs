@@ -132,10 +132,10 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lv_tue = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -146,11 +146,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.lv_mon = new System.Windows.Forms.ListView();
-            this.Time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.supervisor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sup2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_TtHeadline = new System.Windows.Forms.Label();
             this.bsTimeTable = new System.Windows.Forms.BindingSource(this.components);
             this.pnl_Supervisor = new System.Windows.Forms.Panel();
@@ -165,6 +160,11 @@
             this.teacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supervisorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lv_mon = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -950,6 +950,7 @@
             // 
             // pnl_Timetable
             // 
+            this.pnl_Timetable.Controls.Add(this.lv_mon);
             this.pnl_Timetable.Controls.Add(this.lv_wed);
             this.pnl_Timetable.Controls.Add(this.lv_fri);
             this.pnl_Timetable.Controls.Add(this.lv_thur);
@@ -964,12 +965,11 @@
             this.pnl_Timetable.Controls.Add(this.label12);
             this.pnl_Timetable.Controls.Add(this.label11);
             this.pnl_Timetable.Controls.Add(this.label10);
-            this.pnl_Timetable.Controls.Add(this.lv_mon);
             this.pnl_Timetable.Controls.Add(this.lbl_TtHeadline);
             this.pnl_Timetable.Location = new System.Drawing.Point(0, 24);
             this.pnl_Timetable.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Timetable.Name = "pnl_Timetable";
-            this.pnl_Timetable.Size = new System.Drawing.Size(956, 441);
+            this.pnl_Timetable.Size = new System.Drawing.Size(956, 473);
             this.pnl_Timetable.TabIndex = 12;
             // 
             // lv_wed
@@ -979,7 +979,7 @@
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11});
-            this.lv_wed.Location = new System.Drawing.Point(383, 131);
+            this.lv_wed.Location = new System.Drawing.Point(380, 99);
             this.lv_wed.Name = "lv_wed";
             this.lv_wed.Size = new System.Drawing.Size(175, 200);
             this.lv_wed.TabIndex = 21;
@@ -1010,7 +1010,7 @@
             this.columnHeader17,
             this.columnHeader18,
             this.columnHeader19});
-            this.lv_fri.Location = new System.Drawing.Point(747, 129);
+            this.lv_fri.Location = new System.Drawing.Point(744, 97);
             this.lv_fri.Name = "lv_fri";
             this.lv_fri.Size = new System.Drawing.Size(175, 200);
             this.lv_fri.TabIndex = 20;
@@ -1041,7 +1041,7 @@
             this.columnHeader13,
             this.columnHeader14,
             this.columnHeader15});
-            this.lv_thur.Location = new System.Drawing.Point(565, 131);
+            this.lv_thur.Location = new System.Drawing.Point(562, 99);
             this.lv_thur.Name = "lv_thur";
             this.lv_thur.Size = new System.Drawing.Size(175, 200);
             this.lv_thur.TabIndex = 19;
@@ -1068,38 +1068,38 @@
             // lv_tue
             // 
             this.lv_tue.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
-            this.lv_tue.Location = new System.Drawing.Point(201, 131);
+            this.columnHeader7,
+            this.columnHeader20});
+            this.lv_tue.Location = new System.Drawing.Point(198, 99);
             this.lv_tue.Name = "lv_tue";
             this.lv_tue.Size = new System.Drawing.Size(175, 200);
             this.lv_tue.TabIndex = 17;
             this.lv_tue.UseCompatibleStateImageBehavior = false;
             this.lv_tue.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Time";
-            this.columnHeader4.Width = 50;
-            // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Activity";
+            this.columnHeader5.Text = "Time";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Supervisor 1";
+            this.columnHeader6.Text = "Activity";
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Supervisor 2";
+            this.columnHeader7.Text = "Supervisor 1";
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Supervisor 2";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(744, 115);
+            this.label22.Location = new System.Drawing.Point(741, 83);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(61, 13);
             this.label22.TabIndex = 16;
@@ -1108,7 +1108,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(562, 115);
+            this.label21.Location = new System.Drawing.Point(559, 83);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 13);
             this.label21.TabIndex = 15;
@@ -1117,7 +1117,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(380, 115);
+            this.label17.Location = new System.Drawing.Point(377, 83);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 13);
             this.label17.TabIndex = 14;
@@ -1126,17 +1126,16 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(200, 115);
+            this.label16.Location = new System.Drawing.Point(197, 83);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 13);
             this.label16.TabIndex = 13;
             this.label16.Text = "12.04.2016";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(17, 115);
+            this.label15.Location = new System.Drawing.Point(14, 83);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(61, 13);
             this.label15.TabIndex = 12;
@@ -1146,7 +1145,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.label14.Location = new System.Drawing.Point(742, 86);
+            this.label14.Location = new System.Drawing.Point(739, 54);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 29);
@@ -1157,19 +1156,18 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.label13.Location = new System.Drawing.Point(560, 86);
+            this.label13.Location = new System.Drawing.Point(557, 54);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(113, 29);
             this.label13.TabIndex = 10;
             this.label13.Text = "Thursday";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.label12.Location = new System.Drawing.Point(378, 86);
+            this.label12.Location = new System.Drawing.Point(375, 54);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(140, 29);
@@ -1180,7 +1178,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.label11.Location = new System.Drawing.Point(196, 86);
+            this.label11.Location = new System.Drawing.Point(193, 54);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(106, 29);
@@ -1191,43 +1189,12 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.label10.Location = new System.Drawing.Point(17, 86);
+            this.label10.Location = new System.Drawing.Point(14, 54);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 29);
             this.label10.TabIndex = 7;
             this.label10.Text = "Monday";
-            // 
-            // lv_mon
-            // 
-            this.lv_mon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Time,
-            this.Activity,
-            this.supervisor,
-            this.sup2});
-            this.lv_mon.Location = new System.Drawing.Point(19, 131);
-            this.lv_mon.Name = "lv_mon";
-            this.lv_mon.Size = new System.Drawing.Size(175, 200);
-            this.lv_mon.TabIndex = 2;
-            this.lv_mon.UseCompatibleStateImageBehavior = false;
-            this.lv_mon.View = System.Windows.Forms.View.Details;
-            // 
-            // Time
-            // 
-            this.Time.Text = "Time";
-            this.Time.Width = 50;
-            // 
-            // Activity
-            // 
-            this.Activity.Text = "Activity";
-            // 
-            // supervisor
-            // 
-            this.supervisor.Text = "Supervisor 1";
-            // 
-            // sup2
-            // 
-            this.sup2.Text = "Supervisor 2";
             // 
             // lbl_TtHeadline
             // 
@@ -1350,14 +1317,45 @@
             // 
             this.activityBindingSource.DataMember = "Activity";
             // 
+            // lv_mon
+            // 
+            this.lv_mon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
+            this.lv_mon.Location = new System.Drawing.Point(16, 101);
+            this.lv_mon.Name = "lv_mon";
+            this.lv_mon.Size = new System.Drawing.Size(175, 200);
+            this.lv_mon.TabIndex = 22;
+            this.lv_mon.UseCompatibleStateImageBehavior = false;
+            this.lv_mon.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Time";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Activity";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Supervisor 1";
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Supervisor 2";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_Timetable);
             this.Controls.Add(this.pnl_Activities);
             this.Controls.Add(this.pnl_Supervisor);
-            this.Controls.Add(this.pnl_Timetable);
             this.Controls.Add(this.pnl_Report);
             this.Controls.Add(this.pnl_Drinks);
             this.Controls.Add(this.pnl_UpdateDrinks);
@@ -1511,12 +1509,7 @@
         private System.Windows.Forms.BindingSource supervisorBindingSource;
         private System.Windows.Forms.ToolStripMenuItem supervisorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timeTableToolStripMenuItem;
-        private System.Windows.Forms.ListView lv_mon;
         private System.Windows.Forms.BindingSource activityBindingSource;
-        private System.Windows.Forms.ColumnHeader Time;
-        private System.Windows.Forms.ColumnHeader Activity;
-        private System.Windows.Forms.ColumnHeader supervisor;
-        private System.Windows.Forms.ColumnHeader sup2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1538,7 +1531,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ListView lv_tue;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
@@ -1547,6 +1539,12 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ListView lv_mon;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
     }
 }
 
