@@ -95,6 +95,24 @@
             this.lbl_ReportHeadline = new System.Windows.Forms.Label();
             this.drinkTableAdapter = new pdbe37DataSetTableAdapters.DrinkTableAdapter();
             this.purchaseTableAdapter = new pdbe37DataSetTableAdapters.PurchaseTableAdapter();
+            this.pnl_Activities = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_activity_id = new System.Windows.Forms.TextBox();
+            this.btn_remove = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_insert = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtnrsup = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtnrstud = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.listViewActivities = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -111,6 +129,8 @@
             this.pnl_Report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
+            this.pnl_Activities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -205,14 +225,14 @@
             // drinksSuppliesToolStripMenuItem
             // 
             this.drinksSuppliesToolStripMenuItem.Name = "drinksSuppliesToolStripMenuItem";
-            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.drinksSuppliesToolStripMenuItem.Text = "Drinks Supplies";
             this.drinksSuppliesToolStripMenuItem.Click += new System.EventHandler(this.drinksSuppliesToolStripMenuItem_Click);
             // 
             // revenueReportToolStripMenuItem
             // 
             this.revenueReportToolStripMenuItem.Name = "revenueReportToolStripMenuItem";
-            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.revenueReportToolStripMenuItem.Text = "Revenue Report";
             this.revenueReportToolStripMenuItem.Click += new System.EventHandler(this.revenueReportToolStripMenuItem_Click);
             // 
@@ -678,11 +698,184 @@
             // 
             this.purchaseTableAdapter.ClearBeforeFill = true;
             // 
+            // pnl_Activities
+            // 
+            this.pnl_Activities.Controls.Add(this.label8);
+            this.pnl_Activities.Controls.Add(this.txt_activity_id);
+            this.pnl_Activities.Controls.Add(this.btn_remove);
+            this.pnl_Activities.Controls.Add(this.btn_edit);
+            this.pnl_Activities.Controls.Add(this.btn_insert);
+            this.pnl_Activities.Controls.Add(this.label7);
+            this.pnl_Activities.Controls.Add(this.txtnrsup);
+            this.pnl_Activities.Controls.Add(this.label6);
+            this.pnl_Activities.Controls.Add(this.label5);
+            this.pnl_Activities.Controls.Add(this.txtnrstud);
+            this.pnl_Activities.Controls.Add(this.txtname);
+            this.pnl_Activities.Controls.Add(this.listViewActivities);
+            this.pnl_Activities.Controls.Add(this.pictureBox4);
+            this.pnl_Activities.Controls.Add(this.label9);
+            this.pnl_Activities.Location = new System.Drawing.Point(12, 18);
+            this.pnl_Activities.Name = "pnl_Activities";
+            this.pnl_Activities.Size = new System.Drawing.Size(938, 468);
+            this.pnl_Activities.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(757, 162);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "activity_id";
+            // 
+            // txt_activity_id
+            // 
+            this.txt_activity_id.Location = new System.Drawing.Point(847, 160);
+            this.txt_activity_id.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_activity_id.Name = "txt_activity_id";
+            this.txt_activity_id.Size = new System.Drawing.Size(56, 20);
+            this.txt_activity_id.TabIndex = 20;
+            // 
+            // btn_remove
+            // 
+            this.btn_remove.Location = new System.Drawing.Point(657, 398);
+            this.btn_remove.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.Size = new System.Drawing.Size(149, 28);
+            this.btn_remove.TabIndex = 19;
+            this.btn_remove.Text = "remove";
+            this.btn_remove.UseVisualStyleBackColor = true;
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.Location = new System.Drawing.Point(467, 399);
+            this.btn_edit.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(149, 28);
+            this.btn_edit.TabIndex = 18;
+            this.btn_edit.Text = "edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            // 
+            // btn_insert
+            // 
+            this.btn_insert.Location = new System.Drawing.Point(278, 399);
+            this.btn_insert.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(149, 28);
+            this.btn_insert.TabIndex = 17;
+            this.btn_insert.Text = "insert";
+            this.btn_insert.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(717, 357);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "number of supervisors";
+            // 
+            // txtnrsup
+            // 
+            this.txtnrsup.Location = new System.Drawing.Point(847, 357);
+            this.txtnrsup.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnrsup.Name = "txtnrsup";
+            this.txtnrsup.Size = new System.Drawing.Size(56, 20);
+            this.txtnrsup.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(717, 281);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "number of students";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(757, 219);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "name";
+            // 
+            // txtnrstud
+            // 
+            this.txtnrstud.Location = new System.Drawing.Point(847, 281);
+            this.txtnrstud.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnrstud.Name = "txtnrstud";
+            this.txtnrstud.Size = new System.Drawing.Size(56, 20);
+            this.txtnrstud.TabIndex = 11;
+            // 
+            // txtname
+            // 
+            this.txtname.Location = new System.Drawing.Point(847, 217);
+            this.txtname.Margin = new System.Windows.Forms.Padding(2);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(56, 20);
+            this.txtname.TabIndex = 12;
+            // 
+            // listViewActivities
+            // 
+            this.listViewActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listViewActivities.GridLines = true;
+            this.listViewActivities.Location = new System.Drawing.Point(15, 40);
+            this.listViewActivities.Name = "listViewActivities";
+            this.listViewActivities.Size = new System.Drawing.Size(662, 259);
+            this.listViewActivities.TabIndex = 5;
+            this.listViewActivities.UseCompatibleStateImageBehavior = false;
+            this.listViewActivities.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 162;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Date of Birth";
+            this.columnHeader3.Width = 176;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(805, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 29);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Activity";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_Activities);
             this.Controls.Add(this.pnl_Report);
             this.Controls.Add(this.pnl_Drinks);
             this.Controls.Add(this.pnl_UpdateDrinks);
@@ -719,6 +912,9 @@
             this.pnl_Report.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Report)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
+            this.pnl_Activities.ResumeLayout(false);
+            this.pnl_Activities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -791,6 +987,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel pnl_Activities;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_activity_id;
+        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Button btn_insert;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtnrsup;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtnrstud;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.ListView listViewActivities;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label9;
     }
 }
 

@@ -219,7 +219,50 @@ namespace SomerenUI
 
                 pnl_Report.Show();
             }
-        }
+            else if (panelName == "Activities")
+            {
+                // hide all other panels
+                pnl_Dashboard.Hide();
+                img_Dashboard.Hide();
+                pnl_Lecturers.Hide();
+                //pnl_RevenueReport.Hide();
+                pnl_Students.Hide();
+
+                // show students
+                pnl_Activities.Show();
+
+
+
+                // fill the students listview within the students panel with a list of students
+                SomerenLogic.Activity_Service actService = new SomerenLogic.Activity_Service();
+                List<Activity> studentList = actService.GetActivities();
+
+                // clear the listview before filling it again
+                listViewActivities.Clear();
+
+                //add columns 
+                listViewActivities.Columns.Add("activity_id");
+                listViewActivities.Columns[0].Width = 100;
+                listViewActivities.Columns.Add("name");
+                listViewActivities.Columns[1].Width = 100;
+                listViewActivities.Columns.Add("number of students");
+                listViewActivities.Columns[2].Width = 100;
+                listViewActivities.Columns.Add("number of supervisors");
+                listViewActivities.Columns[2].Width = 100;
+
+                foreach (SomerenModel.Activity s in studentList)
+                {
+
+                    ListViewItem li = new ListViewItem(s.activity_id.ToString());
+                    li.SubItems.Add(s.name);
+                    li.SubItems.Add(s.numberofstudents.ToString());
+                    li.SubItems.Add(s.numberofsupervisors.ToString());
+
+                    listViewActivities.Items.Add(li);
+                }
+            }
+        
+    }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -346,6 +389,74 @@ namespace SomerenUI
         private void revenueReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Revenue Report");
+        }
+
+        private void btn_insert_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+
+            Activity activity = new Activity()
+            {
+                name = txtname.Text,
+                numberofstudents = int.Parse(txtnrstud.Text),
+                numberofsupervisors = int.Parse(txtnrsup.Text)
+
+            };
+
+
+            activity_Service.AddActivity(activity);
+
+            showPanel("Activities");
+
+            txtname.Clear();
+            txtnrstud.Clear();
+            txtnrsup.Clear();
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+
+            Activity activity = new Activity()
+            {
+                activity_id = int.Parse(txt_activity_id.Text),
+                name = txtname.Text,
+                numberofstudents = int.Parse(txtnrstud.Text),
+                numberofsupervisors = int.Parse(txtnrsup.Text)
+
+            };
+
+
+            activity_Service.EditActivity(activity);
+
+            showPanel("Activities");
+
+            txtname.Clear();
+            txtnrstud.Clear();
+            txtnrsup.Clear();
+        }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+
+            Activity activity = new Activity()
+            {
+                activity_id = int.Parse(txt_activity_id.Text),
+                name = txtname.Text,
+                numberofstudents = int.Parse(txtnrstud.Text),
+                numberofsupervisors = int.Parse(txtnrsup.Text)
+
+            };
+
+
+            activity_Service.RemoveActivity(activity);
+
+            showPanel("Activities");
+
+            txtname.Clear();
+            txtnrstud.Clear();
+            txtnrsup.Clear();
         }
     }
 }
