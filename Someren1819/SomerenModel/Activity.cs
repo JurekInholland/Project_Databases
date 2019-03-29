@@ -9,10 +9,12 @@ namespace SomerenModel
     public class Activity
     {
         public int activity_id { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
         public string name { get; set; }
         public int numberofstudents { get; set; }
         public int numberofsupervisors { get; set; }
+        public int supervisor1 { get; set; }
+        public int supervisor2 { get; set; }
 
     }
 }

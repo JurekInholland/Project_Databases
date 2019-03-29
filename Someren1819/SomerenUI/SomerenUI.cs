@@ -34,12 +34,17 @@ namespace SomerenUI
             pnl_UpdateDrinks.Hide();
 
             pnl_Report.Hide();
+            pnl_Timetable.Hide();
+            pnl_Supervisor.Hide();
+            pnl_Activities.Hide();
+
         }
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pdbe37DataSet1.Activity' table. You can move, or remove it, as needed.
             drinkTableAdapter.Fill(pdbe37DataSet.Drink);
-       
+            HideAllPanels();
             showPanel("Dashboard");
         }
 
@@ -49,25 +54,17 @@ namespace SomerenUI
             if (panelName == "Dashboard")
             {
 
-                // hide all other panels
-                pnl_Students.Hide();
-                pnl_Lecturers.Hide();
-
-                pnl_Drinks.Hide();
-                pnl_UpdateDrinks.Hide();
+                HideAllPanels();
 
                 // show dashboard
                 pnl_Dashboard.Show();
                 img_Dashboard.Show();
 
-                pnl_Report.Hide();
             }
             else if (panelName == "Students")
             {
                 // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Lecturers.Hide();
+                HideAllPanels();
 
                 // show students
                 pnl_Students.Show();
@@ -102,9 +99,7 @@ namespace SomerenUI
             else if (panelName == "Lecturers")
             {
                 // Hide other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Students.Hide();
+                HideAllPanels();
 
                 // Show lecturers panel; clear listView
                 pnl_Lecturers.Show();
@@ -145,14 +140,7 @@ namespace SomerenUI
             }
             else if (panelName == "Drinks Supplies")
             {
-                // Hide other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Students.Hide();
-                //pnl_RevenueReport.Hide();
-                pnl_Lecturers.Hide();
-                pnl_UpdateDrinks.Hide();
-
+                HideAllPanels();
                 //Show the panel 
                 pnl_Drinks.Show();
                 listViewDrinks.Clear();
@@ -197,11 +185,7 @@ namespace SomerenUI
             }
             else if (panelName == "Edit drinks")
             {
-                // Hide other panels
-                //pnl_Dashboard.Hide();
-                //img_Dashboard.Hide();
-                //pnl_Students.Hide();
-                //pnl_Lecturers.Hide();
+
                 pnl_Drinks.Hide();
 
                 //show panel
@@ -221,17 +205,8 @@ namespace SomerenUI
             }
             else if (panelName == "Activities")
             {
-                // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Lecturers.Hide();
-                //pnl_RevenueReport.Hide();
-                pnl_Students.Hide();
-
-                // show students
+                HideAllPanels();
                 pnl_Activities.Show();
-
-
 
                 // fill the students listview within the students panel with a list of students
                 SomerenLogic.Activity_Service actService = new SomerenLogic.Activity_Service();
@@ -263,16 +238,7 @@ namespace SomerenUI
             }
             else if (panelName == "Supervisors")
             {
-                // Hide other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Students.Hide();
-                //pnl_RevenueReport.Hide();
-                pnl_Lecturers.Hide();
-                pnl_Drinks.Hide();
-                pnl_UpdateDrinks.Hide();
-                cbAdd.Items.Clear();
-                cbRemove.Items.Clear();
+                HideAllPanels();
 
                 //show panel
                 pnl_Supervisor.Show();
@@ -300,6 +266,95 @@ namespace SomerenUI
 
             }
 
+            else if (panelName == "Time Table")
+            {
+
+                HideAllPanels();
+                clearTimetable();
+                SomerenLogic.Timetable_Service ttService = new SomerenLogic.Timetable_Service();
+                List<Activity> activities = ttService.GetTimetableData();
+
+                Dictionary<int, string> teacherNames = ttService.GetTeacherNames();
+
+                // Sort activities by day
+                DateTime actdate = activities[0].date;
+                foreach (Activity act in activities)
+                {
+                    //int teacher1Id = (int)act.supervisor1;
+                    string t1name = TeacherLookup(teacherNames, act.supervisor1);
+                    string t2name = TeacherLookup(teacherNames, act.supervisor2);
+
+                    string day = act.date.DayOfWeek.ToString();
+                    int month = act.date.Month;
+                    int year = act.date.Year;
+
+                    // Only check activities that are within the correct year and month.
+                    if ( year == 2016 && month == 4)
+                    {
+                        // Create a list view item
+                        string time = act.date.ToString("H:mm");
+                        ListViewItem item = new ListViewItem(time);
+                        item.SubItems.Add(act.name);
+                        item.SubItems.Add(t1name);
+                        item.SubItems.Add(t2name);
+
+                        // Switch case that filters activities by weekday. Since only monday and tuesday are relevant,
+                        // those values are hardcoded as well.
+                        switch (day)
+                        {
+                            case "Monday":
+                                lv_mon.Items.Add(item);
+                                break;
+
+                            case "Tuesday":
+                                lv_tue.Items.Add(item);
+                                break;
+                        }
+                    } 
+                }
+                SetColumnSizes();
+                pnl_Timetable.Show();
+            }
+
+        }
+
+        private void clearTimetable()
+        {
+            lv_mon.Items.Clear();
+            lv_tue.Items.Clear();
+        }
+
+        private void SetDayDates()
+        {
+
+        }
+
+        private void SetColumnSizes()
+        {
+            lv_mon.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            lv_mon.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            lv_tue.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            lv_tue.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            lv_wed.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            lv_wed.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            lv_thur.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            lv_thur.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            lv_fri.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            lv_fri.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private string TeacherLookup(Dictionary<int, string> teachers, int teacherId)
+        {
+
+            if (teachers.TryGetValue(teacherId, out string teacherName))
+            {
+                return teacherName;
+            }
+            return "not found";
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -350,7 +405,6 @@ namespace SomerenUI
         private void DataGridViewDirectDBUpdate_Load(object sender, EventArgs e)
         {
             this.drinkTableAdapter.Fill(this.pdbe37DataSet.Drink);
-            MessageBox.Show("TEST");
         }
 
         private void dataGridViewUpdate_Load(object sender, DataGridViewCellEventArgs e)
@@ -505,7 +559,6 @@ namespace SomerenUI
             var listItems = listViewSupervisors.Items.Cast<ListViewItem>();
             foreach (ListViewItem lview in listItems)
             {
-                Console.WriteLine("LVI" + lview.Text);
                 if (cbAdd.Text == lview.Text)
                 {
                     MessageBox.Show("This teacher is already a supervisor.", "Warning", MessageBoxButtons.OK);
@@ -541,6 +594,8 @@ namespace SomerenUI
             //getting the teachers and put them in this list
             List<Teacher> listLecturers = lecturer.GetTeachers();
 
+            cbAdd.Items.Clear();
+
             //adding them into the CB 
             foreach (SomerenModel.Teacher teacher in listLecturers)
             {
@@ -558,6 +613,8 @@ namespace SomerenUI
             //getting the teachers and put them in this list
             List<Supervisor> listSupervisors = sup.GetSupervisors();
 
+            cbRemove.Items.Clear();
+
             //adding them into the CB 
             foreach (SomerenModel.Supervisor teacher in listSupervisors)
             {
@@ -568,6 +625,24 @@ namespace SomerenUI
             }
         }
 
+        private void timeTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Time Table");
+        }
 
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Activities");
+        }
     }
 }

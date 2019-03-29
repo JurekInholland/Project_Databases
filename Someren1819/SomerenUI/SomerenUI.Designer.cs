@@ -43,6 +43,8 @@
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinksSuppliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
@@ -64,25 +66,8 @@
             this.listViewDrinks = new System.Windows.Forms.ListView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbl_Drinks = new System.Windows.Forms.Label();
-            this.pnl_Timetable = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pdbe37DataSet = new pdbe37DataSet();
-            this.label17 = new System.Windows.Forms.Label();
             this.pnl_UpdateDrinks = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dataGridViewUpdate = new System.Windows.Forms.DataGridView();
@@ -130,8 +115,42 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvTimetable = new System.Windows.Forms.DataGridView();
+            this.pnl_Timetable = new System.Windows.Forms.Panel();
+            this.lv_wed = new System.Windows.Forms.ListView();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_fri = new System.Windows.Forms.ListView();
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_thur = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_tue = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lv_mon = new System.Windows.Forms.ListView();
+            this.Time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.supervisor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sup2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_TtHeadline = new System.Windows.Forms.Label();
             this.bsTimeTable = new System.Windows.Forms.BindingSource(this.components);
             this.pnl_Supervisor = new System.Windows.Forms.Panel();
@@ -145,7 +164,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.teacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supervisorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.supervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -155,8 +174,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_Drinks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.pnl_Timetable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdbe37DataSet)).BeginInit();
             this.pnl_UpdateDrinks.SuspendLayout();
@@ -166,12 +183,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Report)).BeginInit();
             this.pnl_Activities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).BeginInit();
+            this.pnl_Timetable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTimeTable)).BeginInit();
             this.pnl_Supervisor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supervisorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -193,7 +210,8 @@
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
             this.drinksToolStripMenuItem,
-            this.supervisorsToolStripMenuItem});
+            this.supervisorsToolStripMenuItem,
+            this.timeTableToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(962, 24);
@@ -248,6 +266,7 @@
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
             this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.activitiesToolStripMenuItem.Text = "Activities";
+            this.activitiesToolStripMenuItem.Click += new System.EventHandler(this.activitiesToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
@@ -267,16 +286,30 @@
             // drinksSuppliesToolStripMenuItem
             // 
             this.drinksSuppliesToolStripMenuItem.Name = "drinksSuppliesToolStripMenuItem";
-            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.drinksSuppliesToolStripMenuItem.Text = "Drinks Supplies";
             this.drinksSuppliesToolStripMenuItem.Click += new System.EventHandler(this.drinksSuppliesToolStripMenuItem_Click);
             // 
             // revenueReportToolStripMenuItem
             // 
             this.revenueReportToolStripMenuItem.Name = "revenueReportToolStripMenuItem";
-            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.revenueReportToolStripMenuItem.Text = "Revenue Report";
             this.revenueReportToolStripMenuItem.Click += new System.EventHandler(this.revenueReportToolStripMenuItem_Click);
+            // 
+            // supervisorsToolStripMenuItem
+            // 
+            this.supervisorsToolStripMenuItem.Name = "supervisorsToolStripMenuItem";
+            this.supervisorsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.supervisorsToolStripMenuItem.Text = "Supervisors";
+            this.supervisorsToolStripMenuItem.Click += new System.EventHandler(this.supervisorsToolStripMenuItem_Click);
+            // 
+            // timeTableToolStripMenuItem
+            // 
+            this.timeTableToolStripMenuItem.Name = "timeTableToolStripMenuItem";
+            this.timeTableToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.timeTableToolStripMenuItem.Text = "Timetable";
+            this.timeTableToolStripMenuItem.Click += new System.EventHandler(this.timeTableToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -420,7 +453,6 @@
             this.pnl_Drinks.Controls.Add(this.listViewDrinks);
             this.pnl_Drinks.Controls.Add(this.pictureBox3);
             this.pnl_Drinks.Controls.Add(this.lbl_Drinks);
-            this.pnl_Drinks.Controls.Add(this.pnl_Timetable);
             this.pnl_Drinks.Location = new System.Drawing.Point(0, 24);
             this.pnl_Drinks.Name = "pnl_Drinks";
             this.pnl_Drinks.Size = new System.Drawing.Size(938, 418);
@@ -469,160 +501,6 @@
             this.lbl_Drinks.TabIndex = 0;
             this.lbl_Drinks.Text = "Drink Supplies";
             // 
-            // pnl_Timetable
-            // 
-            this.pnl_Timetable.Controls.Add(this.label10);
-            this.pnl_Timetable.Controls.Add(this.label11);
-            this.pnl_Timetable.Controls.Add(this.label12);
-            this.pnl_Timetable.Controls.Add(this.label13);
-            this.pnl_Timetable.Controls.Add(this.label14);
-            this.pnl_Timetable.Controls.Add(this.label15);
-            this.pnl_Timetable.Controls.Add(this.label16);
-            this.pnl_Timetable.Controls.Add(this.monthCalendar1);
-            this.pnl_Timetable.Controls.Add(this.dataGridView1);
-            this.pnl_Timetable.Controls.Add(this.label17);
-            this.pnl_Timetable.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Timetable.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Timetable.Name = "pnl_Timetable";
-            this.pnl_Timetable.Size = new System.Drawing.Size(956, 473);
-            this.pnl_Timetable.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(499, 212);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "0";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(499, 188);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "0";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(384, 212);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(107, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Number of customers";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(384, 188);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Turnover:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(384, 162);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(109, 13);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "Total # of drinks sold:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(499, 162);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(13, 13);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "0";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(383, 446);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(150, 20);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Select a time frame.";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(12, 162);
-            this.monthCalendar1.MaxSelectionCount = 9999;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 9;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.dataGridView1.DataSource = this.purchaseBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 32);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(652, 119);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "purchase_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "purchase_id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn2.HeaderText = "date";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "student_id";
-            this.dataGridViewTextBoxColumn3.HeaderText = "student_id";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "item";
-            this.dataGridViewTextBoxColumn4.HeaderText = "item";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "quantity";
-            this.dataGridViewTextBoxColumn5.HeaderText = "quantity";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn6.HeaderText = "cost";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
             // purchaseBindingSource
             // 
             this.purchaseBindingSource.DataMember = "Purchase";
@@ -632,17 +510,6 @@
             // 
             this.pdbe37DataSet.DataSetName = "pdbe37DataSet";
             this.pdbe37DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.label17.Location = new System.Drawing.Point(14, 1);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(188, 29);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Revenue Report";
             // 
             // pnl_UpdateDrinks
             // 
@@ -1081,34 +948,292 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Activity";
             // 
-            // panel1
+            // pnl_Timetable
             // 
-            this.panel1.Controls.Add(this.dgvTimetable);
-            this.panel1.Controls.Add(this.lbl_TtHeadline);
-            this.panel1.Location = new System.Drawing.Point(3, 24);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 465);
-            this.panel1.TabIndex = 12;
+            this.pnl_Timetable.Controls.Add(this.lv_wed);
+            this.pnl_Timetable.Controls.Add(this.lv_fri);
+            this.pnl_Timetable.Controls.Add(this.lv_thur);
+            this.pnl_Timetable.Controls.Add(this.lv_tue);
+            this.pnl_Timetable.Controls.Add(this.label22);
+            this.pnl_Timetable.Controls.Add(this.label21);
+            this.pnl_Timetable.Controls.Add(this.label17);
+            this.pnl_Timetable.Controls.Add(this.label16);
+            this.pnl_Timetable.Controls.Add(this.label15);
+            this.pnl_Timetable.Controls.Add(this.label14);
+            this.pnl_Timetable.Controls.Add(this.label13);
+            this.pnl_Timetable.Controls.Add(this.label12);
+            this.pnl_Timetable.Controls.Add(this.label11);
+            this.pnl_Timetable.Controls.Add(this.label10);
+            this.pnl_Timetable.Controls.Add(this.lv_mon);
+            this.pnl_Timetable.Controls.Add(this.lbl_TtHeadline);
+            this.pnl_Timetable.Location = new System.Drawing.Point(0, 24);
+            this.pnl_Timetable.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Timetable.Name = "pnl_Timetable";
+            this.pnl_Timetable.Size = new System.Drawing.Size(956, 441);
+            this.pnl_Timetable.TabIndex = 12;
             // 
-            // dgvTimetable
+            // lv_wed
             // 
-            this.dgvTimetable.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvTimetable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTimetable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTimetable.Location = new System.Drawing.Point(17, 41);
-            this.dgvTimetable.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvTimetable.Name = "dgvTimetable";
-            this.dgvTimetable.ReadOnly = true;
-            this.dgvTimetable.RowTemplate.Height = 24;
-            this.dgvTimetable.Size = new System.Drawing.Size(780, 119);
-            this.dgvTimetable.TabIndex = 1;
+            this.lv_wed.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.lv_wed.Location = new System.Drawing.Point(383, 131);
+            this.lv_wed.Name = "lv_wed";
+            this.lv_wed.Size = new System.Drawing.Size(175, 200);
+            this.lv_wed.TabIndex = 21;
+            this.lv_wed.UseCompatibleStateImageBehavior = false;
+            this.lv_wed.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Time";
+            this.columnHeader8.Width = 50;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Activity";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Supervisor 1";
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Supervisor 2";
+            // 
+            // lv_fri
+            // 
+            this.lv_fri.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19});
+            this.lv_fri.Location = new System.Drawing.Point(747, 129);
+            this.lv_fri.Name = "lv_fri";
+            this.lv_fri.Size = new System.Drawing.Size(175, 200);
+            this.lv_fri.TabIndex = 20;
+            this.lv_fri.UseCompatibleStateImageBehavior = false;
+            this.lv_fri.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Time";
+            this.columnHeader16.Width = 50;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Activity";
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Supervisor 1";
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Supervisor 2";
+            // 
+            // lv_thur
+            // 
+            this.lv_thur.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15});
+            this.lv_thur.Location = new System.Drawing.Point(565, 131);
+            this.lv_thur.Name = "lv_thur";
+            this.lv_thur.Size = new System.Drawing.Size(175, 200);
+            this.lv_thur.TabIndex = 19;
+            this.lv_thur.UseCompatibleStateImageBehavior = false;
+            this.lv_thur.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Time";
+            this.columnHeader12.Width = 50;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Activity";
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Supervisor 1";
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Supervisor 2";
+            // 
+            // lv_tue
+            // 
+            this.lv_tue.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.lv_tue.Location = new System.Drawing.Point(201, 131);
+            this.lv_tue.Name = "lv_tue";
+            this.lv_tue.Size = new System.Drawing.Size(175, 200);
+            this.lv_tue.TabIndex = 17;
+            this.lv_tue.UseCompatibleStateImageBehavior = false;
+            this.lv_tue.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Time";
+            this.columnHeader4.Width = 50;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Activity";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Supervisor 1";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Supervisor 2";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(744, 115);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(61, 13);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "15.04.2016";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(562, 115);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 13);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "14.04.2016";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(380, 115);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 13);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "13.04.2016";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(200, 115);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 13);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "12.04.2016";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(17, 115);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "11.04.2016";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label14.Location = new System.Drawing.Point(742, 86);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 29);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Friday";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label13.Location = new System.Drawing.Point(560, 86);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 29);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Thursday";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label12.Location = new System.Drawing.Point(378, 86);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(140, 29);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Wednesday";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label11.Location = new System.Drawing.Point(196, 86);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 29);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Tuesday";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label10.Location = new System.Drawing.Point(17, 86);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 29);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Monday";
+            // 
+            // lv_mon
+            // 
+            this.lv_mon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Time,
+            this.Activity,
+            this.supervisor,
+            this.sup2});
+            this.lv_mon.Location = new System.Drawing.Point(19, 131);
+            this.lv_mon.Name = "lv_mon";
+            this.lv_mon.Size = new System.Drawing.Size(175, 200);
+            this.lv_mon.TabIndex = 2;
+            this.lv_mon.UseCompatibleStateImageBehavior = false;
+            this.lv_mon.View = System.Windows.Forms.View.Details;
+            // 
+            // Time
+            // 
+            this.Time.Text = "Time";
+            this.Time.Width = 50;
+            // 
+            // Activity
+            // 
+            this.Activity.Text = "Activity";
+            // 
+            // supervisor
+            // 
+            this.supervisor.Text = "Supervisor 1";
+            // 
+            // sup2
+            // 
+            this.sup2.Text = "Supervisor 2";
             // 
             // lbl_TtHeadline
             // 
             this.lbl_TtHeadline.AutoSize = true;
             this.lbl_TtHeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.lbl_TtHeadline.Location = new System.Drawing.Point(14, 1);
+            this.lbl_TtHeadline.Location = new System.Drawing.Point(11, 8);
             this.lbl_TtHeadline.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TtHeadline.Name = "lbl_TtHeadline";
             this.lbl_TtHeadline.Size = new System.Drawing.Size(122, 29);
@@ -1128,7 +1253,7 @@
             this.pnl_Supervisor.Location = new System.Drawing.Point(0, 24);
             this.pnl_Supervisor.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Supervisor.Name = "pnl_Supervisor";
-            this.pnl_Supervisor.Size = new System.Drawing.Size(949, 441);
+            this.pnl_Supervisor.Size = new System.Drawing.Size(949, 417);
             this.pnl_Supervisor.TabIndex = 13;
             // 
             // btnRemove
@@ -1221,21 +1346,18 @@
             // 
             this.supervisorBindingSource.DataMember = "Supervisor";
             // 
-            // supervisorsToolStripMenuItem
+            // activityBindingSource
             // 
-            this.supervisorsToolStripMenuItem.Name = "supervisorsToolStripMenuItem";
-            this.supervisorsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.supervisorsToolStripMenuItem.Text = "Supervisors";
-            this.supervisorsToolStripMenuItem.Click += new System.EventHandler(this.supervisorsToolStripMenuItem_Click);
+            this.activityBindingSource.DataMember = "Activity";
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
-            this.Controls.Add(this.pnl_Supervisor);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_Activities);
+            this.Controls.Add(this.pnl_Supervisor);
+            this.Controls.Add(this.pnl_Timetable);
             this.Controls.Add(this.pnl_Report);
             this.Controls.Add(this.pnl_Drinks);
             this.Controls.Add(this.pnl_UpdateDrinks);
@@ -1263,9 +1385,6 @@
             this.pnl_Drinks.ResumeLayout(false);
             this.pnl_Drinks.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.pnl_Timetable.ResumeLayout(false);
-            this.pnl_Timetable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdbe37DataSet)).EndInit();
             this.pnl_UpdateDrinks.ResumeLayout(false);
@@ -1278,14 +1397,14 @@
             this.pnl_Activities.ResumeLayout(false);
             this.pnl_Activities.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).EndInit();
+            this.pnl_Timetable.ResumeLayout(false);
+            this.pnl_Timetable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTimeTable)).EndInit();
             this.pnl_Supervisor.ResumeLayout(false);
             this.pnl_Supervisor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supervisorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1377,24 +1496,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnl_Timetable;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvTimetable;
         private System.Windows.Forms.Label lbl_TtHeadline;
         private System.Windows.Forms.BindingSource bsTimeTable;
         private System.Windows.Forms.Panel pnl_Supervisor;
@@ -1409,6 +1510,43 @@
         private System.Windows.Forms.BindingSource teacherBindingSource;
         private System.Windows.Forms.BindingSource supervisorBindingSource;
         private System.Windows.Forms.ToolStripMenuItem supervisorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timeTableToolStripMenuItem;
+        private System.Windows.Forms.ListView lv_mon;
+        private System.Windows.Forms.BindingSource activityBindingSource;
+        private System.Windows.Forms.ColumnHeader Time;
+        private System.Windows.Forms.ColumnHeader Activity;
+        private System.Windows.Forms.ColumnHeader supervisor;
+        private System.Windows.Forms.ColumnHeader sup2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListView lv_wed;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ListView lv_fri;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ListView lv_thur;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ListView lv_tue;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }
 
