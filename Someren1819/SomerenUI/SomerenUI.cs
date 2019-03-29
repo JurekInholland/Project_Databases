@@ -261,8 +261,46 @@ namespace SomerenUI
                     listViewActivities.Items.Add(li);
                 }
             }
-        
-    }
+            else if (panelName == "Supervisors")
+            {
+                // Hide other panels
+                pnl_Dashboard.Hide();
+                img_Dashboard.Hide();
+                pnl_Students.Hide();
+                //pnl_RevenueReport.Hide();
+                pnl_Lecturers.Hide();
+                pnl_Drinks.Hide();
+                pnl_UpdateDrinks.Hide();
+                cbAdd.Items.Clear();
+                cbRemove.Items.Clear();
+
+                //show panel
+                pnl_Supervisor.Show();
+                listViewSupervisors.Clear();
+
+                DisplayAddCB();
+                DisplayRemoveCB();
+
+                SomerenLogic.Supervisor_Service supservice = new SomerenLogic.Supervisor_Service();
+                List<Supervisor> supList = supservice.GetSupervisors();
+
+                //Add columns
+                listViewSupervisors.View = View.Details;
+                listViewSupervisors.Columns.Add("Lecturer ID");
+                listViewSupervisors.Columns[0].Width = 80;
+                listViewSupervisors.Columns.Add("Name");
+                listViewSupervisors.Columns[1].Width = 120;
+
+                foreach (SomerenModel.Supervisor s in supList)
+                {
+                    ListViewItem li = new ListViewItem(s.SupervisorID.ToString());
+                    li.SubItems.Add(s.Name);
+                    listViewSupervisors.Items.Add(li);
+                }
+
+            }
+
+        }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -458,5 +496,78 @@ namespace SomerenUI
             txtnrstud.Clear();
             txtnrsup.Clear();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SomerenDAL.Supervisor_DAO superv = new SomerenDAL.Supervisor_DAO();
+
+            //to compare values in the lists to prevent from adding already existing supervisor
+            var listItems = listViewSupervisors.Items.Cast<ListViewItem>();
+            foreach (ListViewItem lview in listItems)
+            {
+                Console.WriteLine("LVI" + lview.Text);
+                if (cbAdd.Text == lview.Text)
+                {
+                    MessageBox.Show("This teacher is already a supervisor.", "Warning", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            superv.AddSup(cbAdd.Text);
+            cbAdd.ResetText();
+
+            //to reniew the page
+            showPanel("Supervisors");
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you wish to remove this supervisor?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SomerenDAL.Supervisor_DAO supervisor = new SomerenDAL.Supervisor_DAO();
+                supervisor.RemoveSup(cbRemove.Text);
+                showPanel("Supervisors");
+                cbRemove.ResetText();
+            }
+        }
+        private void supervisorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Supervisors");
+        }
+
+        //dispaly the content in CB
+        void DisplayAddCB()
+        {
+            SomerenLogic.Lecturer_Service lecturer = new Lecturer_Service();
+            //getting the teachers and put them in this list
+            List<Teacher> listLecturers = lecturer.GetTeachers();
+
+            //adding them into the CB 
+            foreach (SomerenModel.Teacher teacher in listLecturers)
+            {
+
+                if (teacher != null)
+                {
+                    cbAdd.Items.Add(teacher.Number);
+                }
+            }
+        }
+        //same but for the other CB
+        void DisplayRemoveCB()
+        {
+            SomerenLogic.Supervisor_Service sup = new Supervisor_Service();
+            //getting the teachers and put them in this list
+            List<Supervisor> listSupervisors = sup.GetSupervisors();
+
+            //adding them into the CB 
+            foreach (SomerenModel.Supervisor teacher in listSupervisors)
+            {
+                if (teacher != null)
+                {
+                    cbRemove.Items.Add(teacher.SupervisorID);
+                }
+            }
+        }
+
+
     }
 }

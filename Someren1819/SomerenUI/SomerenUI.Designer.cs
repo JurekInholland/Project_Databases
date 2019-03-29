@@ -81,7 +81,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pdbe37DataSet = new SomerenUI.pdbe37DataSet();
+            this.pdbe37DataSet = new pdbe37DataSet();
             this.label17 = new System.Windows.Forms.Label();
             this.pnl_UpdateDrinks = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -110,8 +110,8 @@
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_ReportHeadline = new System.Windows.Forms.Label();
-            this.drinkTableAdapter = new SomerenUI.pdbe37DataSetTableAdapters.DrinkTableAdapter();
-            this.purchaseTableAdapter = new SomerenUI.pdbe37DataSetTableAdapters.PurchaseTableAdapter();
+            this.drinkTableAdapter = new pdbe37DataSetTableAdapters.DrinkTableAdapter();
+            this.purchaseTableAdapter = new pdbe37DataSetTableAdapters.PurchaseTableAdapter();
             this.pnl_Activities = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_activity_id = new System.Windows.Forms.TextBox();
@@ -134,6 +134,18 @@
             this.dgvTimetable = new System.Windows.Forms.DataGridView();
             this.lbl_TtHeadline = new System.Windows.Forms.Label();
             this.bsTimeTable = new System.Windows.Forms.BindingSource(this.components);
+            this.pnl_Supervisor = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.listViewSupervisors = new System.Windows.Forms.ListView();
+            this.cbRemove = new System.Windows.Forms.ComboBox();
+            this.cbAdd = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.teacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.supervisorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.supervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -157,6 +169,9 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTimeTable)).BeginInit();
+            this.pnl_Supervisor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supervisorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -177,7 +192,8 @@
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
-            this.drinksToolStripMenuItem});
+            this.drinksToolStripMenuItem,
+            this.supervisorsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(962, 24);
@@ -251,14 +267,14 @@
             // drinksSuppliesToolStripMenuItem
             // 
             this.drinksSuppliesToolStripMenuItem.Name = "drinksSuppliesToolStripMenuItem";
-            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.drinksSuppliesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.drinksSuppliesToolStripMenuItem.Text = "Drinks Supplies";
             this.drinksSuppliesToolStripMenuItem.Click += new System.EventHandler(this.drinksSuppliesToolStripMenuItem_Click);
             // 
             // revenueReportToolStripMenuItem
             // 
             this.revenueReportToolStripMenuItem.Name = "revenueReportToolStripMenuItem";
-            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.revenueReportToolStripMenuItem.Text = "Revenue Report";
             this.revenueReportToolStripMenuItem.Click += new System.EventHandler(this.revenueReportToolStripMenuItem_Click);
             // 
@@ -1099,11 +1115,125 @@
             this.lbl_TtHeadline.TabIndex = 0;
             this.lbl_TtHeadline.Text = "Timetable";
             // 
+            // pnl_Supervisor
+            // 
+            this.pnl_Supervisor.Controls.Add(this.btnRemove);
+            this.pnl_Supervisor.Controls.Add(this.btnAdd);
+            this.pnl_Supervisor.Controls.Add(this.label18);
+            this.pnl_Supervisor.Controls.Add(this.label19);
+            this.pnl_Supervisor.Controls.Add(this.listViewSupervisors);
+            this.pnl_Supervisor.Controls.Add(this.cbRemove);
+            this.pnl_Supervisor.Controls.Add(this.cbAdd);
+            this.pnl_Supervisor.Controls.Add(this.label20);
+            this.pnl_Supervisor.Location = new System.Drawing.Point(0, 24);
+            this.pnl_Supervisor.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Supervisor.Name = "pnl_Supervisor";
+            this.pnl_Supervisor.Size = new System.Drawing.Size(949, 441);
+            this.pnl_Supervisor.TabIndex = 13;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(750, 136);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(56, 19);
+            this.btnRemove.TabIndex = 9;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(500, 136);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(56, 19);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label18.Location = new System.Drawing.Point(702, 62);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(117, 17);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Remove from list:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label19.Location = new System.Drawing.Point(449, 62);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(74, 17);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Add to list:";
+            // 
+            // listViewSupervisors
+            // 
+            this.listViewSupervisors.Location = new System.Drawing.Point(26, 50);
+            this.listViewSupervisors.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewSupervisors.Name = "listViewSupervisors";
+            this.listViewSupervisors.Size = new System.Drawing.Size(366, 281);
+            this.listViewSupervisors.TabIndex = 5;
+            this.listViewSupervisors.UseCompatibleStateImageBehavior = false;
+            // 
+            // cbRemove
+            // 
+            this.cbRemove.FormattingEnabled = true;
+            this.cbRemove.Location = new System.Drawing.Point(694, 88);
+            this.cbRemove.Margin = new System.Windows.Forms.Padding(2);
+            this.cbRemove.Name = "cbRemove";
+            this.cbRemove.Size = new System.Drawing.Size(161, 21);
+            this.cbRemove.TabIndex = 4;
+            // 
+            // cbAdd
+            // 
+            this.cbAdd.FormattingEnabled = true;
+            this.cbAdd.Location = new System.Drawing.Point(445, 88);
+            this.cbAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.cbAdd.Name = "cbAdd";
+            this.cbAdd.Size = new System.Drawing.Size(170, 21);
+            this.cbAdd.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label20.Location = new System.Drawing.Point(25, 13);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(141, 29);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Supervisors";
+            // 
+            // teacherBindingSource
+            // 
+            this.teacherBindingSource.DataMember = "Teacher";
+            // 
+            // supervisorBindingSource
+            // 
+            this.supervisorBindingSource.DataMember = "Supervisor";
+            // 
+            // supervisorsToolStripMenuItem
+            // 
+            this.supervisorsToolStripMenuItem.Name = "supervisorsToolStripMenuItem";
+            this.supervisorsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.supervisorsToolStripMenuItem.Text = "Supervisors";
+            this.supervisorsToolStripMenuItem.Click += new System.EventHandler(this.supervisorsToolStripMenuItem_Click);
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_Supervisor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_Activities);
             this.Controls.Add(this.pnl_Report);
@@ -1152,6 +1282,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTimeTable)).EndInit();
+            this.pnl_Supervisor.ResumeLayout(false);
+            this.pnl_Supervisor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supervisorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1263,6 +1397,18 @@
         private System.Windows.Forms.DataGridView dgvTimetable;
         private System.Windows.Forms.Label lbl_TtHeadline;
         private System.Windows.Forms.BindingSource bsTimeTable;
+        private System.Windows.Forms.Panel pnl_Supervisor;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ListView listViewSupervisors;
+        private System.Windows.Forms.ComboBox cbRemove;
+        private System.Windows.Forms.ComboBox cbAdd;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.BindingSource teacherBindingSource;
+        private System.Windows.Forms.BindingSource supervisorBindingSource;
+        private System.Windows.Forms.ToolStripMenuItem supervisorsToolStripMenuItem;
     }
 }
 

@@ -48,6 +48,7 @@
     <Compile Include="Report_Service.cs" />
     <Compile Include="Student_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supervisor_Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SomerenDAL\SomerenDAL.csproj">
