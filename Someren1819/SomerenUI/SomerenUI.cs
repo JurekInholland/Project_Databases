@@ -42,10 +42,23 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pdbe37DataSet1.Activity' table. You can move, or remove it, as needed.
-            drinkTableAdapter.Fill(pdbe37DataSet.Drink);
-            HideAllPanels();
-            showPanel("Dashboard");
+            // Display a login form before main ui is loaded
+            // credit: https://stackoverflow.com/a/3507941
+            DialogResult result;
+            using (var loginForm = new LoginForm())
+                result = loginForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // login was successful, proceed with setup
+                drinkTableAdapter.Fill(pdbe37DataSet.Drink);
+                HideAllPanels();
+                showPanel("Dashboard");
+            } else
+            {
+                // If so login window is closed without providing correct credentials,
+                // close the application.
+                Application.Exit();
+            }
         }
 
         private void showPanel(string panelName)
